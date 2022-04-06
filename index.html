@@ -15,7 +15,7 @@
             // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
             // the link to your model provided by Teachable Machine export panel
-            const URL = 'https://teachablemachine.withgoogle.com/models/52J_Is0BE/';
+            const URL = 'https://teachablemachine.withgoogle.com/models/bLFDgvrKO/';
 
             let model, webcam, labelContainer, maxPredictions;
 
@@ -60,18 +60,50 @@
            
 				if(prediction[0].probability.toFixed(2)>0.8)
 					{
-						labelContainer.childNodes[0].innerHTML = '주먹';
+						labelContainer.childNodes[0].innerHTML = '당신은 강아지를 닮았네요!';
 					}
 				else if
 					(prediction[1].probability.toFixed(2)>0.8)
 					{
-						labelContainer.childNodes[0].innerHTML = '보자기';
+						labelContainer.childNodes[0].innerHTML = '당신은 고양이를 닮았네요!';
 					}
-				else{
-					labelContainer.childNodes[0].innerHTML = "가위";
-				}
+				else if
+					(prediction[2].probability.toFixed(2)>0.8)
+					{
+						labelContainer.childNodes[0].innerHTML = '당신은 곰을 닮았네요!';
+					}
+				else if
+					(prediction[3].probability.toFixed(2)>0.8)
+					{
+						labelContainer.childNodes[0].innerHTML = '당신은 공룡을 닮았네요!';
+					}
+				else if
+					(prediction[4].probability.toFixed(2)>0.8)
+					{
+						labelContainer.childNodes[0].innerHTML = '당신은 뱀을 닮았네요!';
+					}
+				else if
+					(prediction[5].probability.toFixed(2)>0.8)
+					{
+						labelContainer.childNodes[0].innerHTML = '당신은 사슴을 닮았네요!';
+					}
+				else if
+					(prediction[6].probability.toFixed(2)>0.8)
+					{
+						labelContainer.childNodes[0].inner여우L = '당신은 여우를 닮았네요!';
+					}
+				else if
+					(prediction[7].probability.toFixed(2)>0.8)
+					{
+						labelContainer.childNodes[0].innerHTML = '당신은 토끼를 닮았네요!';
+					}
+				else if
+					(prediction[8].probability.toFixed(2)>0.8)
+					{
+						labelContainer.childNodes[0].innerHTML = "당신은 호랑이를 닮았네요!";
+					}
 				/*
-				for (let i = 0; i < maxPredictions; i++) {
+				for (let i = 0; i < maxPredictions; i++) 
                     const classPrediction =
                         prediction[i].className + ': ' + prediction[i].probability.toFixed(2);
                     labelContainer.childNodes[i].innerHTML = classPrediction;

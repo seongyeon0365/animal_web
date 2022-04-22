@@ -2,19 +2,41 @@
 <html>
     <head>
         <link rel="stylesheet" href="style.css" />
+		
+		
+		
+		
     </head>
-			<style>
+		<style>
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 			.ngc{
 				font-family: 'Jua', serif;/*웹 폰트 지정*/
 		color: ivory; font-size:1.5em; text-shadow: -2px 0 grey, 0 2px grey, 2px 0 grey, 0 -2px grey;
-				background-color: orange; text-align:center;}
+				background-color: orange; text-align:center;
+			}
+			
+			
+		.main_text {
+            text-align: center;
+            margin: 0 auto;
+            padding: 50px 0px;
+            border-bottom: 5px solid #eee;
+            width: 100%;
+        }
+
+			
+			
 		</style>
     <body>
+		
+		
         <div class="ngc">당신의 얼굴은 어떤 동물을 닮았나요?</div>
-        <button style="background-color:orange; border-color:black; " type="button" onclick="init()">Start</button>
-        <div id="webcam-container"></div>
-        <div id="label-container"></div>
+        <button style="top:50%; left:50%; position:absolute; display:block; width:100px;height:50px; background-color:orange; border-color:black; " type="button" onclick="init()"> Start</button>
+        
+		 <section class="main_text">
+		<div id="webcam-container"></div>
+	
+		<div id="label-container"></div>
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
         <script type="text/javascript">
@@ -22,7 +44,7 @@
             // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
             // the link to your model provided by Teachable Machine export panel
-            const URL = 'https://teachablemachine.withgoogle.com/models/bLFDgvrKO/';
+            const URL = "https://teachablemachine.withgoogle.com/models/bLFDgvrKO/";
 
             let model, webcam, labelContainer, maxPredictions;
 
@@ -40,7 +62,7 @@
 
                 // Convenience function to setup a webcam
                 const flip = true; // whether to flip the webcam
-                webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+                webcam = new tmImage.Webcam(300, 300, flip); // width, height, flip
                 await webcam.setup(); // request access to the webcam
                 await webcam.play();
                 window.requestAnimationFrame(loop);
@@ -118,5 +140,7 @@
 				*/
             }
         </script>
+			 
+			 	</section>
     </body>
 </html>
